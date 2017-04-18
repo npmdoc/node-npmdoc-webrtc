@@ -1,0 +1,4166 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/henrikjoreteg/webrtc.js"
+
+    >webrtc (v1.14.1)</a>
+</h1>
+<h4>WebRTC abstraction for making it simple to manage multiple peer connections of various types.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc">module webrtc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.webrtc">
+            function <span class="apidocSignatureSpan"></span>webrtc
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer">
+            function <span class="apidocSignatureSpan">webrtc.</span>peer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype._audioEnabled">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype._audioEnabled
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype._videoEnabled">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype._videoEnabled
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.isAudioEnabled">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.isAudioEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.isVideoEnabled">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.isVideoEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.mute">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.mute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.pause">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.pause
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.pauseVideo">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.pauseVideo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.resume">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.resume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.resumeVideo">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.resumeVideo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.setMicIfEnabled">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.setMicIfEnabled
+            <span class="apidocSignatureSpan">(volume)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.setupAudioMonitor">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.setupAudioMonitor
+            <span class="apidocSignatureSpan">(stream, harkOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.start">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.start
+            <span class="apidocSignatureSpan">(mediaConstraints, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.startScreenShare">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.startScreenShare
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stop">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.stop
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stopScreenShare">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.stopScreenShare
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stopStreams">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.stopStreams
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.unmute">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.unmute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.emit">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.emit
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.getWildcardCallbacks
+            <span class="apidocSignatureSpan">(eventName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.off">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.off
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.on">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.on
+            <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.once">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.once
+            <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.releaseGroup">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.releaseGroup
+            <span class="apidocSignatureSpan">(groupName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.toString">
+            function <span class="apidocSignatureSpan">webrtc.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webrtc.</span>peer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webrtc.</span>super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.peer">module webrtc.peer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.peer">
+            function <span class="apidocSignatureSpan">webrtc.</span>peer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.super_">
+            function <span class="apidocSignatureSpan">webrtc.peer.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.peer.prototype">module webrtc.peer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype._observeDataChannel">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>_observeDataChannel
+            <span class="apidocSignatureSpan">(channel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.end">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.getDataChannel">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>getDataChannel
+            <span class="apidocSignatureSpan">(name, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.handleDataChannelAdded">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>handleDataChannelAdded
+            <span class="apidocSignatureSpan">(channel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.handleMessage">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>handleMessage
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.handleRemoteStreamAdded">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>handleRemoteStreamAdded
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.handleStreamRemoved">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>handleStreamRemoved
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.icerestart">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>icerestart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.onIceCandidate">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>onIceCandidate
+            <span class="apidocSignatureSpan">(candidate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.send">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>send
+            <span class="apidocSignatureSpan">(messageType, payload)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.sendDirectly">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>sendDirectly
+            <span class="apidocSignatureSpan">(channel, messageType, payload)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.sendFile">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>sendFile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.peer.prototype.start">
+            function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_">module webrtc.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_">
+            function <span class="apidocSignatureSpan">webrtc.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype">module webrtc.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype._audioEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>_audioEnabled
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype._videoEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>_videoEnabled
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.isAudioEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>isAudioEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.isVideoEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>isVideoEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.mute">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>mute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.pause">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>pause
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.pauseVideo">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>pauseVideo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.resume">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>resume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.resumeVideo">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>resumeVideo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.setMicIfEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>setMicIfEnabled
+            <span class="apidocSignatureSpan">(volume)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.setupAudioMonitor">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>setupAudioMonitor
+            <span class="apidocSignatureSpan">(stream, harkOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.start">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>start
+            <span class="apidocSignatureSpan">(mediaConstraints, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.startLocalMedia">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>startLocalMedia
+            <span class="apidocSignatureSpan">(mediaConstraints, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.startScreenShare">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>startScreenShare
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stop">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stop
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stopLocalMedia">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopLocalMedia
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stopScreenShare">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopScreenShare
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stopStreams">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopStreams
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.unmute">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>unmute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype._audioEnabled">module webrtc.super_.prototype._audioEnabled</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype._audioEnabled._audioEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>_audioEnabled
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype._videoEnabled">module webrtc.super_.prototype._videoEnabled</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype._videoEnabled._videoEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>_videoEnabled
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.isAudioEnabled">module webrtc.super_.prototype.isAudioEnabled</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.isAudioEnabled.isAudioEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>isAudioEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.isVideoEnabled">module webrtc.super_.prototype.isVideoEnabled</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.isVideoEnabled.isVideoEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>isVideoEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.mute">module webrtc.super_.prototype.mute</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.mute.mute">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>mute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.pause">module webrtc.super_.prototype.pause</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.pause.pause">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>pause
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.pauseVideo">module webrtc.super_.prototype.pauseVideo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.pauseVideo.pauseVideo">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>pauseVideo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.resume">module webrtc.super_.prototype.resume</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.resume.resume">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>resume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.resumeVideo">module webrtc.super_.prototype.resumeVideo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.resumeVideo.resumeVideo">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>resumeVideo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.setMicIfEnabled">module webrtc.super_.prototype.setMicIfEnabled</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.setMicIfEnabled.setMicIfEnabled">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>setMicIfEnabled
+            <span class="apidocSignatureSpan">(volume)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.setupAudioMonitor">module webrtc.super_.prototype.setupAudioMonitor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.setupAudioMonitor.setupAudioMonitor">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>setupAudioMonitor
+            <span class="apidocSignatureSpan">(stream, harkOptions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.start">module webrtc.super_.prototype.start</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.start.start">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>start
+            <span class="apidocSignatureSpan">(mediaConstraints, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.startScreenShare">module webrtc.super_.prototype.startScreenShare</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.startScreenShare.startScreenShare">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>startScreenShare
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.stop">module webrtc.super_.prototype.stop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stop.stop">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stop
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.stopScreenShare">module webrtc.super_.prototype.stopScreenShare</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stopScreenShare.stopScreenShare">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopScreenShare
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.stopStreams">module webrtc.super_.prototype.stopStreams</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.stopStreams.stopStreams">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopStreams
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.prototype.unmute">module webrtc.super_.prototype.unmute</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.prototype.unmute.unmute">
+            function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>unmute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.super_">module webrtc.super_.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.super_">
+            function <span class="apidocSignatureSpan">webrtc.super_.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.mixin">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.</span>mixin
+            <span class="apidocSignatureSpan">(constructor)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.super_.prototype">module webrtc.super_.super_.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>isWildEmitter</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.emit">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>emit
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>getWildcardCallbacks
+            <span class="apidocSignatureSpan">(eventName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.off">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>off
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.on">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>on
+            <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.once">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>once
+            <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.releaseGroup">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>releaseGroup
+            <span class="apidocSignatureSpan">(groupName)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.super_.prototype.emit">module webrtc.super_.super_.prototype.emit</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.emit.emit">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>emit
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.super_.prototype.getWildcardCallbacks">module webrtc.super_.super_.prototype.getWildcardCallbacks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks.getWildcardCallbacks">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>getWildcardCallbacks
+            <span class="apidocSignatureSpan">(eventName)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.super_.prototype.off">module webrtc.super_.super_.prototype.off</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.off.off">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>off
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.super_.prototype.on">module webrtc.super_.super_.prototype.on</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.on.on">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>on
+            <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.super_.prototype.once">module webrtc.super_.super_.prototype.once</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.once.once">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>once
+            <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.super_.super_.prototype.releaseGroup">module webrtc.super_.super_.prototype.releaseGroup</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.super_.super_.prototype.releaseGroup.releaseGroup">
+            function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>releaseGroup
+            <span class="apidocSignatureSpan">(groupName)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webrtc.toString">module webrtc.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webrtc.toString.toString">
+            function <span class="apidocSignatureSpan">webrtc.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc" id="apidoc.module.webrtc">module webrtc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.webrtc" id="apidoc.element.webrtc.webrtc">
+        function <span class="apidocSignatureSpan"></span>webrtc
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebRTC(opts) {
+    var self = this;
+    var options = opts || {};
+    var config = this.config = {
+            debug: false,
+            // makes the entire PC config overridable
+            peerConnectionConfig: {
+                iceServers: [{&#x22;url&#x22;: &#x22;stun:stun.l.google.com:19302&#x22;}]
+            },
+            peerConnectionConstraints: {
+                optional: [
+                    {DtlsSrtpKeyAgreement: true}
+                ]
+            },
+            receiveMedia: {
+                mandatory: {
+                    OfferToReceiveAudio: true,
+                    OfferToReceiveVideo: true
+                }
+            },
+            enableDataChannels: true
+        };
+    var item;
+
+    // expose screensharing check
+    this.screenSharingSupport = webrtc.screenSharing;
+
+    // We also allow a &#x27;logger&#x27; option. It can be any object that implements
+    // log, warn, and error methods.
+    // We log nothing by default, following &#x22;the rule of silence&#x22;:
+    // http://www.linfo.org/rule_of_silence.html
+    this.logger = function () {
+        // we assume that if you&#x27;re in debug mode and you didn&#x27;t
+        // pass in a logger, you actually want to log as much as
+        // possible.
+        if (opts.debug) {
+            return opts.logger || console;
+        } else {
+        // or we&#x27;ll use your logger which should have its own logic
+        // for output. Or we&#x27;ll return the no-op.
+            return opts.logger || mockconsole;
+        }
+    }();
+
+    // set options
+    for (item in options) {
+        this.config[item] = options[item];
+    }
+
+    // check for support
+    if (!webrtc.support) {
+        this.logger.error(&#x27;Your browser doesn\&#x27;t seem to support WebRTC&#x27;);
+    }
+
+    // where we&#x27;ll store our peer connections
+    this.peers = [];
+
+    // call localMedia constructor
+    localMedia.call(this, this.config);
+
+    this.on(&#x27;speaking&#x27;, function () {
+        if (!self.hardMuted) {
+            // FIXME: should use sendDirectlyToAll, but currently has different semantics wrt payload
+            self.peers.forEach(function (peer) {
+                if (peer.enableDataChannels) {
+                    var dc = peer.getDataChannel(&#x27;hark&#x27;);
+                    if (dc.readyState != &#x27;open&#x27;) return;
+                    dc.send(JSON.stringify({type: &#x27;speaking&#x27;}));
+                }
+            });
+        }
+    });
+    this.on(&#x27;stoppedSpeaking&#x27;, function () {
+        if (!self.hardMuted) {
+            // FIXME: should use sendDirectlyToAll, but currently has different semantics wrt payload
+            self.peers.forEach(function (peer) {
+                if (peer.enableDataChannels) {
+                    var dc = peer.getDataChannel(&#x27;hark&#x27;);
+                    if (dc.readyState != &#x27;open&#x27;) return;
+                    dc.send(JSON.stringify({type: &#x27;stoppedSpeaking&#x27;}));
+                }
+            });
+        }
+    });
+    this.on(&#x27;volumeChange&#x27;, function (volume, treshold) {
+        if (!self.hardMuted) {
+            // FIXME: should use sendDirectlyToAll, but currently has different semantics wrt payload
+            self.peers.forEach(function (peer) {
+                if (peer.enableDataChannels) {
+                    var dc = peer.getDataChannel(&#x27;hark&#x27;);
+                    if (dc.readyState != &#x27;open&#x27;) return;
+                    dc.send(JSON.stringify({type: &#x27;volume&#x27;, volume: volume }));
+                }
+            });
+        }
+    });
+
+    // log events in debug mode
+    if (this.config.debug) {
+        this.on(&#x27;*&#x27;, function (event, val1, val2) {
+            var logger;
+            // if you didn&#x27;t pass in a logger and you explicitly turning on debug
+            // we&#x27;re just going to assume you&#x27;re wanting log output with console
+            if (self.config.logger === mockconsole) {
+                logger = console;
+            } else {
+                logger = self.logger;
+            }
+            logger.log(&#x27;event:&#x27;, event, val1, val2);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer" id="apidoc.element.webrtc.peer">
+        function <span class="apidocSignatureSpan">webrtc.</span>peer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Peer(options) {
+    var self = this;
+
+    this.id = options.id;
+    this.parent = options.parent;
+    this.type = options.type || &#x27;video&#x27;;
+    this.oneway = options.oneway || false;
+    this.sharemyscreen = options.sharemyscreen || false;
+    this.browserPrefix = options.prefix;
+    this.stream = options.stream;
+    this.enableDataChannels = options.enableDataChannels === undefined ? this.parent.config.enableDataChannels : options.enableDataChannels
+;
+    this.receiveMedia = options.receiveMedia || this.parent.config.receiveMedia;
+    this.channels = {};
+    this.sid = options.sid || Date.now().toString();
+    // Create an RTCPeerConnection via the polyfill
+    this.pc = new PeerConnection(this.parent.config.peerConnectionConfig, this.parent.config.peerConnectionConstraints);
+    this.pc.on(&#x27;ice&#x27;, this.onIceCandidate.bind(this));
+    this.pc.on(&#x27;offer&#x27;, function (offer) {
+        self.send(&#x27;offer&#x27;, offer);
+    });
+    this.pc.on(&#x27;answer&#x27;, function (offer) {
+        self.send(&#x27;answer&#x27;, offer);
+    });
+    this.pc.on(&#x27;addStream&#x27;, this.handleRemoteStreamAdded.bind(this));
+    this.pc.on(&#x27;addChannel&#x27;, this.handleDataChannelAdded.bind(this));
+    this.pc.on(&#x27;removeStream&#x27;, this.handleStreamRemoved.bind(this));
+    // Just fire negotiation needed events for now
+    // When browser re-negotiation handling seems to work
+    // we can use this as the trigger for starting the offer/answer process
+    // automatically. We&#x27;ll just leave it be for now while this stabalizes.
+    this.pc.on(&#x27;negotiationNeeded&#x27;, this.emit.bind(this, &#x27;negotiationNeeded&#x27;));
+    this.pc.on(&#x27;iceConnectionStateChange&#x27;, this.emit.bind(this, &#x27;iceConnectionStateChange&#x27;));
+    this.pc.on(&#x27;iceConnectionStateChange&#x27;, function () {
+        switch (self.pc.iceConnectionState) {
+        case &#x27;failed&#x27;:
+            // currently, in chrome only the initiator goes to failed
+            // so we need to signal this to the peer
+            if (self.pc.pc.peerconnection.localDescription.type === &#x27;offer&#x27;) {
+                self.parent.emit(&#x27;iceFailed&#x27;, self);
+                self.send(&#x27;connectivityError&#x27;);
+            }
+            break;
+        }
+    });
+    this.pc.on(&#x27;signalingStateChange&#x27;, this.emit.bind(this, &#x27;signalingStateChange&#x27;));
+    this.logger = this.parent.logger;
+
+    // handle screensharing/broadcast mode
+    if (options.type === &#x27;screen&#x27;) {
+        if (this.parent.localScreen &#x26;&#x26; this.sharemyscreen) {
+            this.logger.log(&#x27;adding local screen stream to peer connection&#x27;);
+            this.pc.addStream(this.parent.localScreen);
+            this.broadcaster = options.broadcaster;
+        }
+    } else {
+        this.parent.localStreams.forEach(function (stream) {
+            self.pc.addStream(stream);
+        });
+    }
+
+    // call emitter constructor
+    WildEmitter.call(this);
+
+    this.on(&#x27;channelOpen&#x27;, function (channel) {
+        if (channel.protocol === INBAND_FILETRANSFER_V1) {
+            channel.onmessage = function (event) {
+                var metadata = JSON.parse(event.data);
+                var receiver = new FileTransfer.Receiver();
+                receiver.receive(metadata, channel);
+                self.emit(&#x27;fileTransfer&#x27;, metadata, receiver);
+                receiver.on(&#x27;receivedFile&#x27;, function (file, metadata) {
+                    receiver.channel.close();
+                });
+            };
+        }
+    });
+
+    // proxy events to parent
+    this.on(&#x27;*&#x27;, function () {
+        self.parent.emit.apply(self.parent, arguments);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_" id="apidoc.element.webrtc.super_">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalMedia(opts) {
+    WildEmitter.call(this);
+
+    var config = this.config = {
+        autoAdjustMic: false,
+        detectSpeakingEvents: false,
+        audioFallback: false,
+        media: {
+            audio: true,
+            video: true
+        },
+        logger: mockconsole
+    };
+
+    var item;
+    for (item in opts) {
+        this.config[item] = opts[item];
+    }
+
+    this.logger = config.logger;
+    this._log = this.logger.log.bind(this.logger, &#x27;LocalMedia:&#x27;);
+    this._logerror = this.logger.error.bind(this.logger, &#x27;LocalMedia:&#x27;);
+
+    this.screenSharingSupport = webrtcSupport.screenSharing;
+
+    this.localStreams = [];
+    this.localScreens = [];
+
+    if (!webrtcSupport.supportGetUserMedia) {
+        this._logerror(&#x27;Your browser does not support local media capture.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype._audioEnabled" id="apidoc.element.webrtc.super_.prototype._audioEnabled">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype._audioEnabled
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype._audioEnabled = function (bool) {
+    // work around for chrome 27 bug where disabling tracks
+    // doesn&#x27;t seem to work (works in canary, remove when working)
+    this.setMicIfEnabled(bool ? 1 : 0);
+    this.localStreams.forEach(function (stream) {
+        stream.getAudioTracks().forEach(function (track) {
+            track.enabled = !!bool;
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype._videoEnabled" id="apidoc.element.webrtc.super_.prototype._videoEnabled">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype._videoEnabled
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype._videoEnabled = function (bool) {
+    this.localStreams.forEach(function (stream) {
+        stream.getVideoTracks().forEach(function (track) {
+            track.enabled = !!bool;
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.isAudioEnabled" id="apidoc.element.webrtc.super_.prototype.isAudioEnabled">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.isAudioEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.isAudioEnabled = function () {
+    var enabled = true;
+    this.localStreams.forEach(function (stream) {
+        stream.getAudioTracks().forEach(function (track) {
+            enabled = enabled &#x26;&#x26; track.enabled;
+        });
+    });
+    return enabled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.isVideoEnabled" id="apidoc.element.webrtc.super_.prototype.isVideoEnabled">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.isVideoEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.isVideoEnabled = function () {
+    var enabled = true;
+    this.localStreams.forEach(function (stream) {
+        stream.getVideoTracks().forEach(function (track) {
+            enabled = enabled &#x26;&#x26; track.enabled;
+        });
+    });
+    return enabled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.mute" id="apidoc.element.webrtc.super_.prototype.mute">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.mute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.mute = function () {
+    this._audioEnabled(false);
+    this.hardMuted = true;
+    this.emit(&#x27;audioOff&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.pause" id="apidoc.element.webrtc.super_.prototype.pause">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.pause
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.pause = function () {
+    this.mute();
+    this.pauseVideo();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.pauseVideo" id="apidoc.element.webrtc.super_.prototype.pauseVideo">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.pauseVideo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.pauseVideo = function () {
+    this._videoEnabled(false);
+    this.emit(&#x27;videoOff&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.resume" id="apidoc.element.webrtc.super_.prototype.resume">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.resume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.resume = function () {
+    this.unmute();
+    this.resumeVideo();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.resumeVideo" id="apidoc.element.webrtc.super_.prototype.resumeVideo">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.resumeVideo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.resumeVideo = function () {
+    this._videoEnabled(true);
+    this.emit(&#x27;videoOn&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.setMicIfEnabled" id="apidoc.element.webrtc.super_.prototype.setMicIfEnabled">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.setMicIfEnabled
+        <span class="apidocSignatureSpan">(volume)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.setMicIfEnabled = function (volume) {
+    if (!this.config.autoAdjustMic) {
+        return;
+    }
+    this.gainController.setGain(volume);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.setupAudioMonitor" id="apidoc.element.webrtc.super_.prototype.setupAudioMonitor">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.setupAudioMonitor
+        <span class="apidocSignatureSpan">(stream, harkOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.setupAudioMonitor = function (stream, harkOptions) {
+    this._log(&#x27;Setup audio&#x27;);
+    var audio = this.audioMonitor = hark(stream, harkOptions);
+    var self = this;
+    var timeout;
+
+    audio.on(&#x27;speaking&#x27;, function () {
+        self.emit(&#x27;speaking&#x27;);
+        if (self.hardMuted) {
+            return;
+        }
+        self.setMicIfEnabled(1);
+    });
+
+    audio.on(&#x27;stopped_speaking&#x27;, function () {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
+        timeout = setTimeout(function () {
+            self.emit(&#x27;stoppedSpeaking&#x27;);
+            if (self.hardMuted) {
+                return;
+            }
+            self.setMicIfEnabled(0.5);
+        }, 1000);
+    });
+    audio.on(&#x27;volume_change&#x27;, function (volume, treshold) {
+        self.emit(&#x27;volumeChange&#x27;, volume, treshold);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.start" id="apidoc.element.webrtc.super_.prototype.start">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.start
+        <span class="apidocSignatureSpan">(mediaConstraints, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.start = function (mediaConstraints, cb) {
+    var self = this;
+    var constraints = mediaConstraints || this.config.media;
+
+    getUserMedia(constraints, function (err, stream) {
+
+        if (!err) {
+            if (constraints.audio &#x26;&#x26; self.config.detectSpeakingEvents) {
+                self.setupAudioMonitor(stream, self.config.harkOptions);
+            }
+            self.localStreams.push(stream);
+
+            if (self.config.autoAdjustMic) {
+                self.gainController = new GainController(stream);
+                // start out somewhat muted if we can track audio
+                self.setMicIfEnabled(0.5);
+            }
+
+            // TODO: might need to migrate to the video tracks onended
+            // FIXME: firefox does not seem to trigger this...
+            stream.onended = function () {
+<span class="apidocCodeCommentSpan">                /*
+                var idx = self.localStreams.indexOf(stream);
+                if (idx &#x3e; -1) {
+                    self.localScreens.splice(idx, 1);
+                }
+                self.emit(&#x27;localStreamStopped&#x27;, stream);
+                */
+</span>            };
+
+            self.emit(&#x27;localStream&#x27;, stream);
+        } else {
+            // Fallback for users without a camera
+            if (self.config.audioFallback &#x26;&#x26; err.name === &#x27;DevicesNotFoundError&#x27; &#x26;&#x26; constraints.video !== false) {
+                constraints.video = false;
+                self.start(constraints, cb);
+                return;
+            }
+        }
+        if (cb) {
+            return cb(err, stream);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.startScreenShare" id="apidoc.element.webrtc.super_.prototype.startScreenShare">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.startScreenShare
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.startScreenShare = function (cb) {
+    var self = this;
+    getScreenMedia(function (err, stream) {
+        if (!err) {
+            self.localScreens.push(stream);
+
+            // TODO: might need to migrate to the video tracks onended
+            // Firefox does not support .onended but it does not support
+            // screensharing either
+            stream.onended = function () {
+                var idx = self.localScreens.indexOf(stream);
+                if (idx &#x3e; -1) {
+                    self.localScreens.splice(idx, 1);
+                }
+                self.emit(&#x27;localScreenStopped&#x27;, stream);
+            };
+            self.emit(&#x27;localScreen&#x27;, stream);
+        }
+
+        // enable the callback
+        if (cb) {
+            return cb(err, stream);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stop" id="apidoc.element.webrtc.super_.prototype.stop">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.stop
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.stop = function (stream) {
+    var self = this;
+    // FIXME: duplicates cleanup code until fixed in FF
+    if (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        var idx = self.localStreams.indexOf(stream);
+        if (idx &#x3e; -1) {
+            self.emit(&#x27;localStreamStopped&#x27;, stream);
+            self.localStreams = self.localStreams.splice(idx, 1);
+        } else {
+            idx = self.localScreens.indexOf(stream);
+            if (idx &#x3e; -1) {
+                self.emit(&#x27;localScreenStopped&#x27;, stream);
+                self.localScreens = self.localScreens.splice(idx, 1);
+            }
+        }
+    } else {
+        this.stopStreams();
+        this.stopScreenShare();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stopScreenShare" id="apidoc.element.webrtc.super_.prototype.stopScreenShare">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.stopScreenShare
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.stopScreenShare = function (stream) {
+    var self = this;
+    if (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        this.emit(&#x27;localScreenStopped&#x27;, stream);
+    } else {
+        this.localScreens.forEach(function (stream) {
+            stream.getTracks().forEach(function (track) { track.stop(); });
+            self.emit(&#x27;localScreenStopped&#x27;, stream);
+        });
+        this.localScreens = [];
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stopStreams" id="apidoc.element.webrtc.super_.prototype.stopStreams">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.stopStreams
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.stopStreams = function () {
+    var self = this;
+    if (this.audioMonitor) {
+        this.audioMonitor.stop();
+        delete this.audioMonitor;
+    }
+    this.localStreams.forEach(function (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        self.emit(&#x27;localStreamStopped&#x27;, stream);
+    });
+    this.localStreams = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.unmute" id="apidoc.element.webrtc.super_.prototype.unmute">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.prototype.unmute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.prototype.unmute = function () {
+    this._audioEnabled(true);
+    this.hardMuted = false;
+    this.emit(&#x27;audioOn&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_" id="apidoc.element.webrtc.super_.super_">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WildEmitter() { }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.emit" id="apidoc.element.webrtc.super_.super_.prototype.emit">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.emit
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.super_.prototype.emit = function (event) {
+    this.callbacks = this.callbacks || {};
+    var args = [].slice.call(arguments, 1),
+        callbacks = this.callbacks[event],
+        specialCallbacks = this.getWildcardCallbacks(event),
+        i,
+        len,
+        item,
+        listeners;
+
+    if (callbacks) {
+        listeners = callbacks.slice();
+        for (i = 0, len = listeners.length; i &#x3c; len; ++i) {
+            if (!listeners[i]) {
+                break;
+            }
+            listeners[i].apply(this, args);
+        }
+    }
+
+    if (specialCallbacks) {
+        len = specialCallbacks.length;
+        listeners = specialCallbacks.slice();
+        for (i = 0, len = listeners.length; i &#x3c; len; ++i) {
+            if (!listeners[i]) {
+                break;
+            }
+            listeners[i].apply(this, [event].concat(args));
+        }
+    }
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks" id="apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.getWildcardCallbacks
+        <span class="apidocSignatureSpan">(eventName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.super_.prototype.getWildcardCallbacks = function (eventName) {
+    this.callbacks = this.callbacks || {};
+    var item,
+        split,
+        result = [];
+
+    for (item in this.callbacks) {
+        split = item.split(&#x27;*&#x27;);
+        if (item === &#x27;*&#x27; || (split.length === 2 &#x26;&#x26; eventName.slice(0, split[0].length) === split[0])) {
+            result = result.concat(this.callbacks[item]);
+        }
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.off" id="apidoc.element.webrtc.super_.super_.prototype.off">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.off
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.super_.prototype.off = function (event, fn) {
+    this.callbacks = this.callbacks || {};
+    var callbacks = this.callbacks[event],
+        i;
+
+    if (!callbacks) return this;
+
+    // remove all handlers
+    if (arguments.length === 1) {
+        delete this.callbacks[event];
+        return this;
+    }
+
+    // remove specific handler
+    i = callbacks.indexOf(fn);
+    callbacks.splice(i, 1);
+    if (callbacks.length === 0) {
+        delete this.callbacks[event];
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.on" id="apidoc.element.webrtc.super_.super_.prototype.on">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.on
+        <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.super_.prototype.on = function (event, groupName, fn) {
+    this.callbacks = this.callbacks || {};
+    var hasGroup = (arguments.length === 3),
+        group = hasGroup ? arguments[1] : undefined,
+        func = hasGroup ? arguments[2] : arguments[1];
+    func._groupName = group;
+    (this.callbacks[event] = this.callbacks[event] || []).push(func);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.once" id="apidoc.element.webrtc.super_.super_.prototype.once">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.once
+        <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.super_.prototype.once = function (event, groupName, fn) {
+    var self = this,
+        hasGroup = (arguments.length === 3),
+        group = hasGroup ? arguments[1] : undefined,
+        func = hasGroup ? arguments[2] : arguments[1];
+    function on() {
+        self.off(event, on);
+        func.apply(this, arguments);
+    }
+    this.on(event, group, on);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.releaseGroup" id="apidoc.element.webrtc.super_.super_.prototype.releaseGroup">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_.super_.prototype.releaseGroup
+        <span class="apidocSignatureSpan">(groupName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_.super_.prototype.releaseGroup = function (groupName) {
+    this.callbacks = this.callbacks || {};
+    var item, i, len, handlers;
+    for (item in this.callbacks) {
+        handlers = this.callbacks[item];
+        for (i = 0, len = handlers.length; i &#x3c; len; i++) {
+            if (handlers[i]._groupName === groupName) {
+                //console.log(&#x27;removing&#x27;);
+                // remove it and shorten the array we&#x27;re looping through
+                handlers.splice(i, 1);
+                i--;
+                len--;
+            }
+        }
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.toString" id="apidoc.element.webrtc.toString">
+        function <span class="apidocSignatureSpan">webrtc.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.oneway = options.oneway || false;
+this.sharemyscreen = options.sharemyscreen || false;
+this.browserPrefix = options.prefix;
+this.stream = options.stream;
+this.enableDataChannels = options.enableDataChannels === undefined ? this.parent.config.enableDataChannels : options.enableDataChannels
+;
+this.receiveMedia = options.receiveMedia || this.parent.config.receiveMedia;
+this.channels = {};
+this.sid = options.sid || Date.now().<span class="apidocCodeKeywordSpan">toString</span>();
+// Create an RTCPeerConnection via the polyfill
+this.pc = new PeerConnection(this.parent.config.peerConnectionConfig, this.parent.config.peerConnectionConstraints);
+this.pc.on(&#x27;ice&#x27;, this.onIceCandidate.bind(this));
+this.pc.on(&#x27;offer&#x27;, function (offer) {
+    self.send(&#x27;offer&#x27;, offer);
+});
+this.pc.on(&#x27;answer&#x27;, function (offer) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.peer" id="apidoc.module.webrtc.peer">module webrtc.peer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.peer" id="apidoc.element.webrtc.peer.peer">
+        function <span class="apidocSignatureSpan">webrtc.</span>peer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Peer(options) {
+    var self = this;
+
+    this.id = options.id;
+    this.parent = options.parent;
+    this.type = options.type || &#x27;video&#x27;;
+    this.oneway = options.oneway || false;
+    this.sharemyscreen = options.sharemyscreen || false;
+    this.browserPrefix = options.prefix;
+    this.stream = options.stream;
+    this.enableDataChannels = options.enableDataChannels === undefined ? this.parent.config.enableDataChannels : options.enableDataChannels
+;
+    this.receiveMedia = options.receiveMedia || this.parent.config.receiveMedia;
+    this.channels = {};
+    this.sid = options.sid || Date.now().toString();
+    // Create an RTCPeerConnection via the polyfill
+    this.pc = new PeerConnection(this.parent.config.peerConnectionConfig, this.parent.config.peerConnectionConstraints);
+    this.pc.on(&#x27;ice&#x27;, this.onIceCandidate.bind(this));
+    this.pc.on(&#x27;offer&#x27;, function (offer) {
+        self.send(&#x27;offer&#x27;, offer);
+    });
+    this.pc.on(&#x27;answer&#x27;, function (offer) {
+        self.send(&#x27;answer&#x27;, offer);
+    });
+    this.pc.on(&#x27;addStream&#x27;, this.handleRemoteStreamAdded.bind(this));
+    this.pc.on(&#x27;addChannel&#x27;, this.handleDataChannelAdded.bind(this));
+    this.pc.on(&#x27;removeStream&#x27;, this.handleStreamRemoved.bind(this));
+    // Just fire negotiation needed events for now
+    // When browser re-negotiation handling seems to work
+    // we can use this as the trigger for starting the offer/answer process
+    // automatically. We&#x27;ll just leave it be for now while this stabalizes.
+    this.pc.on(&#x27;negotiationNeeded&#x27;, this.emit.bind(this, &#x27;negotiationNeeded&#x27;));
+    this.pc.on(&#x27;iceConnectionStateChange&#x27;, this.emit.bind(this, &#x27;iceConnectionStateChange&#x27;));
+    this.pc.on(&#x27;iceConnectionStateChange&#x27;, function () {
+        switch (self.pc.iceConnectionState) {
+        case &#x27;failed&#x27;:
+            // currently, in chrome only the initiator goes to failed
+            // so we need to signal this to the peer
+            if (self.pc.pc.peerconnection.localDescription.type === &#x27;offer&#x27;) {
+                self.parent.emit(&#x27;iceFailed&#x27;, self);
+                self.send(&#x27;connectivityError&#x27;);
+            }
+            break;
+        }
+    });
+    this.pc.on(&#x27;signalingStateChange&#x27;, this.emit.bind(this, &#x27;signalingStateChange&#x27;));
+    this.logger = this.parent.logger;
+
+    // handle screensharing/broadcast mode
+    if (options.type === &#x27;screen&#x27;) {
+        if (this.parent.localScreen &#x26;&#x26; this.sharemyscreen) {
+            this.logger.log(&#x27;adding local screen stream to peer connection&#x27;);
+            this.pc.addStream(this.parent.localScreen);
+            this.broadcaster = options.broadcaster;
+        }
+    } else {
+        this.parent.localStreams.forEach(function (stream) {
+            self.pc.addStream(stream);
+        });
+    }
+
+    // call emitter constructor
+    WildEmitter.call(this);
+
+    this.on(&#x27;channelOpen&#x27;, function (channel) {
+        if (channel.protocol === INBAND_FILETRANSFER_V1) {
+            channel.onmessage = function (event) {
+                var metadata = JSON.parse(event.data);
+                var receiver = new FileTransfer.Receiver();
+                receiver.receive(metadata, channel);
+                self.emit(&#x27;fileTransfer&#x27;, metadata, receiver);
+                receiver.on(&#x27;receivedFile&#x27;, function (file, metadata) {
+                    receiver.channel.close();
+                });
+            };
+        }
+    });
+
+    // proxy events to parent
+    this.on(&#x27;*&#x27;, function () {
+        self.parent.emit.apply(self.parent, arguments);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.super_" id="apidoc.element.webrtc.peer.super_">
+        function <span class="apidocSignatureSpan">webrtc.peer.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WildEmitter() { }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.peer.prototype" id="apidoc.module.webrtc.peer.prototype">module webrtc.peer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype._observeDataChannel" id="apidoc.element.webrtc.peer.prototype._observeDataChannel">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>_observeDataChannel
+        <span class="apidocSignatureSpan">(channel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_observeDataChannel = function (channel) {
+    var self = this;
+    channel.onclose = this.emit.bind(this, &#x27;channelClose&#x27;, channel);
+    channel.onerror = this.emit.bind(this, &#x27;channelError&#x27;, channel);
+    channel.onmessage = function (event) {
+        self.emit(&#x27;channelMessage&#x27;, self, channel.label, JSON.parse(event.data), channel, event);
+    };
+    channel.onopen = this.emit.bind(this, &#x27;channelOpen&#x27;, channel);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Peer.prototype.getDataChannel = function (name, opts) {
+if (!webrtc.supportDataChannel) return this.emit(&#x27;error&#x27;, new Error(&#x27;createDataChannel not supported&#x27;));
+var channel = this.channels[name];
+opts || (opts = {});
+if (channel) return channel;
+// if we don&#x27;t have one by this label, create it
+channel = this.channels[name] = this.pc.createDataChannel(name, opts);
+this.<span class="apidocCodeKeywordSpan">_observeDataChannel</span>(channel);
+return channel;
+};
+
+Peer.prototype.onIceCandidate = function (candidate) {
+if (this.closed) return;
+if (candidate) {
+    this.send(&#x27;candidate&#x27;, candidate);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.end" id="apidoc.element.webrtc.peer.prototype.end">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function () {
+    if (this.closed) return;
+    this.pc.close();
+    this.handleStreamRemoved();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (this.stream) {
+    this.logger.warn(&#x27;Already have a remote stream&#x27;);
+} else {
+    this.stream = event.stream;
+    // FIXME: addEventListener(&#x27;ended&#x27;, ...) would be nicer
+    // but does not work in firefox
+    this.stream.onended = function () {
+        self.<span class="apidocCodeKeywordSpan">end</span>();
+    };
+    this.parent.emit(&#x27;peerStreamAdded&#x27;, this);
+}
+};
+
+Peer.prototype.handleStreamRemoved = function () {
+this.parent.peers.splice(this.parent.peers.indexOf(this), 1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.getDataChannel" id="apidoc.element.webrtc.peer.prototype.getDataChannel">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>getDataChannel
+        <span class="apidocSignatureSpan">(name, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDataChannel = function (name, opts) {
+    if (!webrtc.supportDataChannel) return this.emit(&#x27;error&#x27;, new Error(&#x27;createDataChannel not supported&#x27;));
+    var channel = this.channels[name];
+    opts || (opts = {});
+    if (channel) return channel;
+    // if we don&#x27;t have one by this label, create it
+    channel = this.channels[name] = this.pc.createDataChannel(name, opts);
+    this._observeDataChannel(channel);
+    return channel;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// returns true when message was sent and false if channel is not open
+Peer.prototype.sendDirectly = function (channel, messageType, payload) {
+    var message = {
+        type: messageType,
+        payload: payload
+    };
+    this.logger.log(&#x27;sending via datachannel&#x27;, channel, messageType, message);
+    var dc = this.<span class="apidocCodeKeywordSpan">getDataChannel</span>(channel);
+    if (dc.readyState != &#x27;open&#x27;) return false;
+    dc.send(JSON.stringify(message));
+    return true;
+};
+
+// Internal method registering handlers for a data channel and emitting events on the peer
+Peer.prototype._observeDataChannel = function (channel) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.handleDataChannelAdded" id="apidoc.element.webrtc.peer.prototype.handleDataChannelAdded">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>handleDataChannelAdded
+        <span class="apidocSignatureSpan">(channel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleDataChannelAdded = function (channel) {
+    this.channels[channel.label] = channel;
+    this._observeDataChannel(channel);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.handleMessage" id="apidoc.element.webrtc.peer.prototype.handleMessage">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>handleMessage
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleMessage = function (message) {
+    var self = this;
+
+    this.logger.log(&#x27;getting&#x27;, message.type, message);
+
+    if (message.prefix) this.browserPrefix = message.prefix;
+
+    if (message.type === &#x27;offer&#x27;) {
+        // workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=1064247
+        message.payload.sdp = message.payload.sdp.replace(&#x27;a=fmtp:0 profile-level-id=0x42e00c;packetization-mode=1\r\n&#x27;, &#x27;&#x27;);
+        this.pc.handleOffer(message.payload, function (err) {
+            if (err) {
+                return;
+            }
+            // auto-accept
+            self.pc.answer(self.receiveMedia, function (err, sessionDescription) {
+                //self.send(&#x27;answer&#x27;, sessionDescription);
+            });
+        });
+    } else if (message.type === &#x27;answer&#x27;) {
+        this.pc.handleAnswer(message.payload);
+    } else if (message.type === &#x27;candidate&#x27;) {
+        this.pc.processIce(message.payload);
+    } else if (message.type === &#x27;connectivityError&#x27;) {
+        this.parent.emit(&#x27;connectivityError&#x27;, self);
+    } else if (message.type === &#x27;mute&#x27;) {
+        this.parent.emit(&#x27;mute&#x27;, {id: message.from, name: message.payload.name});
+    } else if (message.type === &#x27;unmute&#x27;) {
+        this.parent.emit(&#x27;unmute&#x27;, {id: message.from, name: message.payload.name});
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.handleRemoteStreamAdded" id="apidoc.element.webrtc.peer.prototype.handleRemoteStreamAdded">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>handleRemoteStreamAdded
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleRemoteStreamAdded = function (event) {
+    var self = this;
+    if (this.stream) {
+        this.logger.warn(&#x27;Already have a remote stream&#x27;);
+    } else {
+        this.stream = event.stream;
+        // FIXME: addEventListener(&#x27;ended&#x27;, ...) would be nicer
+        // but does not work in firefox
+        this.stream.onended = function () {
+            self.end();
+        };
+        this.parent.emit(&#x27;peerStreamAdded&#x27;, this);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.handleStreamRemoved" id="apidoc.element.webrtc.peer.prototype.handleStreamRemoved">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>handleStreamRemoved
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleStreamRemoved = function () {
+    this.parent.peers.splice(this.parent.peers.indexOf(this), 1);
+    this.closed = true;
+    this.parent.emit(&#x27;peerStreamRemoved&#x27;, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+constraints.mandatory.IceRestart = true;
+this.pc.offer(constraints, function (err, success) { });
+};
+
+Peer.prototype.end = function () {
+if (this.closed) return;
+this.pc.close();
+this.<span class="apidocCodeKeywordSpan">handleStreamRemoved</span>();
+};
+
+Peer.prototype.handleRemoteStreamAdded = function (event) {
+var self = this;
+if (this.stream) {
+    this.logger.warn(&#x27;Already have a remote stream&#x27;);
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.icerestart" id="apidoc.element.webrtc.peer.prototype.icerestart">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>icerestart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">icerestart = function () {
+    var constraints = this.receiveMedia;
+    constraints.mandatory.IceRestart = true;
+    this.pc.offer(constraints, function (err, success) { });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.onIceCandidate" id="apidoc.element.webrtc.peer.prototype.onIceCandidate">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>onIceCandidate
+        <span class="apidocSignatureSpan">(candidate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onIceCandidate = function (candidate) {
+    if (this.closed) return;
+    if (candidate) {
+        this.send(&#x27;candidate&#x27;, candidate);
+    } else {
+        this.logger.log(&#x22;End of candidates.&#x22;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.send" id="apidoc.element.webrtc.peer.prototype.send">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>send
+        <span class="apidocSignatureSpan">(messageType, payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (messageType, payload) {
+    var message = {
+        to: this.id,
+        sid: this.sid,
+        broadcaster: this.broadcaster,
+        roomType: this.type,
+        type: messageType,
+        payload: payload,
+        prefix: webrtc.prefix
+    };
+    this.logger.log(&#x27;sending&#x27;, messageType, message);
+    this.parent.emit(&#x27;message&#x27;, message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.receiveMedia = options.receiveMedia || this.parent.config.receiveMedia;
+this.channels = {};
+this.sid = options.sid || Date.now().toString();
+// Create an RTCPeerConnection via the polyfill
+this.pc = new PeerConnection(this.parent.config.peerConnectionConfig, this.parent.config.peerConnectionConstraints);
+this.pc.on(&#x27;ice&#x27;, this.onIceCandidate.bind(this));
+this.pc.on(&#x27;offer&#x27;, function (offer) {
+    self.<span class="apidocCodeKeywordSpan">send</span>(&#x27;offer&#x27;, offer);
+});
+this.pc.on(&#x27;answer&#x27;, function (offer) {
+    self.send(&#x27;answer&#x27;, offer);
+});
+this.pc.on(&#x27;addStream&#x27;, this.handleRemoteStreamAdded.bind(this));
+this.pc.on(&#x27;addChannel&#x27;, this.handleDataChannelAdded.bind(this));
+this.pc.on(&#x27;removeStream&#x27;, this.handleStreamRemoved.bind(this));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.sendDirectly" id="apidoc.element.webrtc.peer.prototype.sendDirectly">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>sendDirectly
+        <span class="apidocSignatureSpan">(channel, messageType, payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendDirectly = function (channel, messageType, payload) {
+    var message = {
+        type: messageType,
+        payload: payload
+    };
+    this.logger.log(&#x27;sending via datachannel&#x27;, channel, messageType, message);
+    var dc = this.getDataChannel(channel);
+    if (dc.readyState != &#x27;open&#x27;) return false;
+    dc.send(JSON.stringify(message));
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.sendFile" id="apidoc.element.webrtc.peer.prototype.sendFile">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>sendFile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendFile = function (file) {
+    var sender = new FileTransfer.Sender();
+    var dc = this.getDataChannel(&#x27;filetransfer&#x27; + (new Date()).getTime(), {
+        protocol: INBAND_FILETRANSFER_V1
+    });
+    // override onopen
+    dc.onopen = function () {
+        dc.send(JSON.stringify({
+            size: file.size,
+            name: file.name
+        }));
+        sender.send(file, dc);
+    };
+    // override onclose
+    dc.onclose = function () {
+        console.log(&#x27;sender received transfer&#x27;);
+        sender.emit(&#x27;complete&#x27;);
+    };
+    return sender;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.peer.prototype.start" id="apidoc.element.webrtc.peer.prototype.start">
+        function <span class="apidocSignatureSpan">webrtc.peer.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+    var self = this;
+
+    // well, the webrtc api requires that we either
+    // a) create a datachannel a priori
+    // b) do a renegotiation later to add the SCTP m-line
+    // Let&#x27;s do (a) first...
+    if (this.enableDataChannels) {
+        this.getDataChannel(&#x27;simplewebrtc&#x27;);
+    }
+
+    this.pc.offer(this.receiveMedia, function (err, sessionDescription) {
+        //self.send(&#x27;offer&#x27;, sessionDescription);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_" id="apidoc.module.webrtc.super_">module webrtc.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_" id="apidoc.element.webrtc.super_.super_">
+        function <span class="apidocSignatureSpan">webrtc.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WildEmitter() { }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype" id="apidoc.module.webrtc.super_.prototype">module webrtc.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype._audioEnabled" id="apidoc.element.webrtc.super_.prototype._audioEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>_audioEnabled
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_audioEnabled = function (bool) {
+    // work around for chrome 27 bug where disabling tracks
+    // doesn&#x27;t seem to work (works in canary, remove when working)
+    this.setMicIfEnabled(bool ? 1 : 0);
+    this.localStreams.forEach(function (stream) {
+        stream.getAudioTracks().forEach(function (track) {
+            track.enabled = !!bool;
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype._videoEnabled" id="apidoc.element.webrtc.super_.prototype._videoEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>_videoEnabled
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_videoEnabled = function (bool) {
+    this.localStreams.forEach(function (stream) {
+        stream.getVideoTracks().forEach(function (track) {
+            track.enabled = !!bool;
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.isAudioEnabled" id="apidoc.element.webrtc.super_.prototype.isAudioEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>isAudioEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAudioEnabled = function () {
+    var enabled = true;
+    this.localStreams.forEach(function (stream) {
+        stream.getAudioTracks().forEach(function (track) {
+            enabled = enabled &#x26;&#x26; track.enabled;
+        });
+    });
+    return enabled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.isVideoEnabled" id="apidoc.element.webrtc.super_.prototype.isVideoEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>isVideoEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isVideoEnabled = function () {
+    var enabled = true;
+    this.localStreams.forEach(function (stream) {
+        stream.getVideoTracks().forEach(function (track) {
+            enabled = enabled &#x26;&#x26; track.enabled;
+        });
+    });
+    return enabled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.mute" id="apidoc.element.webrtc.super_.prototype.mute">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>mute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mute = function () {
+    this._audioEnabled(false);
+    this.hardMuted = true;
+    this.emit(&#x27;audioOff&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.pause" id="apidoc.element.webrtc.super_.prototype.pause">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>pause
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pause = function () {
+    this.mute();
+    this.pauseVideo();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.pauseVideo" id="apidoc.element.webrtc.super_.prototype.pauseVideo">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>pauseVideo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pauseVideo = function () {
+    this._videoEnabled(false);
+    this.emit(&#x27;videoOff&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.resume" id="apidoc.element.webrtc.super_.prototype.resume">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>resume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resume = function () {
+    this.unmute();
+    this.resumeVideo();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.resumeVideo" id="apidoc.element.webrtc.super_.prototype.resumeVideo">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>resumeVideo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resumeVideo = function () {
+    this._videoEnabled(true);
+    this.emit(&#x27;videoOn&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.setMicIfEnabled" id="apidoc.element.webrtc.super_.prototype.setMicIfEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>setMicIfEnabled
+        <span class="apidocSignatureSpan">(volume)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setMicIfEnabled = function (volume) {
+    if (!this.config.autoAdjustMic) {
+        return;
+    }
+    this.gainController.setGain(volume);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.setupAudioMonitor" id="apidoc.element.webrtc.super_.prototype.setupAudioMonitor">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>setupAudioMonitor
+        <span class="apidocSignatureSpan">(stream, harkOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupAudioMonitor = function (stream, harkOptions) {
+    this._log(&#x27;Setup audio&#x27;);
+    var audio = this.audioMonitor = hark(stream, harkOptions);
+    var self = this;
+    var timeout;
+
+    audio.on(&#x27;speaking&#x27;, function () {
+        self.emit(&#x27;speaking&#x27;);
+        if (self.hardMuted) {
+            return;
+        }
+        self.setMicIfEnabled(1);
+    });
+
+    audio.on(&#x27;stopped_speaking&#x27;, function () {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
+        timeout = setTimeout(function () {
+            self.emit(&#x27;stoppedSpeaking&#x27;);
+            if (self.hardMuted) {
+                return;
+            }
+            self.setMicIfEnabled(0.5);
+        }, 1000);
+    });
+    audio.on(&#x27;volume_change&#x27;, function (volume, treshold) {
+        self.emit(&#x27;volumeChange&#x27;, volume, treshold);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.start" id="apidoc.element.webrtc.super_.prototype.start">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>start
+        <span class="apidocSignatureSpan">(mediaConstraints, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (mediaConstraints, cb) {
+    var self = this;
+    var constraints = mediaConstraints || this.config.media;
+
+    getUserMedia(constraints, function (err, stream) {
+
+        if (!err) {
+            if (constraints.audio &#x26;&#x26; self.config.detectSpeakingEvents) {
+                self.setupAudioMonitor(stream, self.config.harkOptions);
+            }
+            self.localStreams.push(stream);
+
+            if (self.config.autoAdjustMic) {
+                self.gainController = new GainController(stream);
+                // start out somewhat muted if we can track audio
+                self.setMicIfEnabled(0.5);
+            }
+
+            // TODO: might need to migrate to the video tracks onended
+            // FIXME: firefox does not seem to trigger this...
+            stream.onended = function () {
+<span class="apidocCodeCommentSpan">                /*
+                var idx = self.localStreams.indexOf(stream);
+                if (idx &#x3e; -1) {
+                    self.localScreens.splice(idx, 1);
+                }
+                self.emit(&#x27;localStreamStopped&#x27;, stream);
+                */
+</span>            };
+
+            self.emit(&#x27;localStream&#x27;, stream);
+        } else {
+            // Fallback for users without a camera
+            if (self.config.audioFallback &#x26;&#x26; err.name === &#x27;DevicesNotFoundError&#x27; &#x26;&#x26; constraints.video !== false) {
+                constraints.video = false;
+                self.start(constraints, cb);
+                return;
+            }
+        }
+        if (cb) {
+            return cb(err, stream);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.startLocalMedia" id="apidoc.element.webrtc.super_.prototype.startLocalMedia">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>startLocalMedia
+        <span class="apidocSignatureSpan">(mediaConstraints, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startLocalMedia = function (mediaConstraints, cb) {
+    var self = this;
+    var constraints = mediaConstraints || this.config.media;
+
+    getUserMedia(constraints, function (err, stream) {
+
+        if (!err) {
+            if (constraints.audio &#x26;&#x26; self.config.detectSpeakingEvents) {
+                self.setupAudioMonitor(stream, self.config.harkOptions);
+            }
+            self.localStreams.push(stream);
+
+            if (self.config.autoAdjustMic) {
+                self.gainController = new GainController(stream);
+                // start out somewhat muted if we can track audio
+                self.setMicIfEnabled(0.5);
+            }
+
+            // TODO: might need to migrate to the video tracks onended
+            // FIXME: firefox does not seem to trigger this...
+            stream.onended = function () {
+<span class="apidocCodeCommentSpan">                /*
+                var idx = self.localStreams.indexOf(stream);
+                if (idx &#x3e; -1) {
+                    self.localScreens.splice(idx, 1);
+                }
+                self.emit(&#x27;localStreamStopped&#x27;, stream);
+                */
+</span>            };
+
+            self.emit(&#x27;localStream&#x27;, stream);
+        } else {
+            // Fallback for users without a camera
+            if (self.config.audioFallback &#x26;&#x26; err.name === &#x27;DevicesNotFoundError&#x27; &#x26;&#x26; constraints.video !== false) {
+                constraints.video = false;
+                self.start(constraints, cb);
+                return;
+            }
+        }
+        if (cb) {
+            return cb(err, stream);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.startScreenShare" id="apidoc.element.webrtc.super_.prototype.startScreenShare">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>startScreenShare
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startScreenShare = function (cb) {
+    var self = this;
+    getScreenMedia(function (err, stream) {
+        if (!err) {
+            self.localScreens.push(stream);
+
+            // TODO: might need to migrate to the video tracks onended
+            // Firefox does not support .onended but it does not support
+            // screensharing either
+            stream.onended = function () {
+                var idx = self.localScreens.indexOf(stream);
+                if (idx &#x3e; -1) {
+                    self.localScreens.splice(idx, 1);
+                }
+                self.emit(&#x27;localScreenStopped&#x27;, stream);
+            };
+            self.emit(&#x27;localScreen&#x27;, stream);
+        }
+
+        // enable the callback
+        if (cb) {
+            return cb(err, stream);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stop" id="apidoc.element.webrtc.super_.prototype.stop">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stop
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (stream) {
+    var self = this;
+    // FIXME: duplicates cleanup code until fixed in FF
+    if (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        var idx = self.localStreams.indexOf(stream);
+        if (idx &#x3e; -1) {
+            self.emit(&#x27;localStreamStopped&#x27;, stream);
+            self.localStreams = self.localStreams.splice(idx, 1);
+        } else {
+            idx = self.localScreens.indexOf(stream);
+            if (idx &#x3e; -1) {
+                self.emit(&#x27;localScreenStopped&#x27;, stream);
+                self.localScreens = self.localScreens.splice(idx, 1);
+            }
+        }
+    } else {
+        this.stopStreams();
+        this.stopScreenShare();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stopLocalMedia" id="apidoc.element.webrtc.super_.prototype.stopLocalMedia">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopLocalMedia
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopLocalMedia = function (stream) {
+    var self = this;
+    // FIXME: duplicates cleanup code until fixed in FF
+    if (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        var idx = self.localStreams.indexOf(stream);
+        if (idx &#x3e; -1) {
+            self.emit(&#x27;localStreamStopped&#x27;, stream);
+            self.localStreams = self.localStreams.splice(idx, 1);
+        } else {
+            idx = self.localScreens.indexOf(stream);
+            if (idx &#x3e; -1) {
+                self.emit(&#x27;localScreenStopped&#x27;, stream);
+                self.localScreens = self.localScreens.splice(idx, 1);
+            }
+        }
+    } else {
+        this.stopStreams();
+        this.stopScreenShare();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stopScreenShare" id="apidoc.element.webrtc.super_.prototype.stopScreenShare">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopScreenShare
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopScreenShare = function (stream) {
+    var self = this;
+    if (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        this.emit(&#x27;localScreenStopped&#x27;, stream);
+    } else {
+        this.localScreens.forEach(function (stream) {
+            stream.getTracks().forEach(function (track) { track.stop(); });
+            self.emit(&#x27;localScreenStopped&#x27;, stream);
+        });
+        this.localScreens = [];
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stopStreams" id="apidoc.element.webrtc.super_.prototype.stopStreams">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopStreams
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopStreams = function () {
+    var self = this;
+    if (this.audioMonitor) {
+        this.audioMonitor.stop();
+        delete this.audioMonitor;
+    }
+    this.localStreams.forEach(function (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        self.emit(&#x27;localStreamStopped&#x27;, stream);
+    });
+    this.localStreams = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.unmute" id="apidoc.element.webrtc.super_.prototype.unmute">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>unmute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unmute = function () {
+    this._audioEnabled(true);
+    this.hardMuted = false;
+    this.emit(&#x27;audioOn&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype._audioEnabled" id="apidoc.module.webrtc.super_.prototype._audioEnabled">module webrtc.super_.prototype._audioEnabled</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype._audioEnabled._audioEnabled" id="apidoc.element.webrtc.super_.prototype._audioEnabled._audioEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>_audioEnabled
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_audioEnabled = function (bool) {
+    // work around for chrome 27 bug where disabling tracks
+    // doesn&#x27;t seem to work (works in canary, remove when working)
+    this.setMicIfEnabled(bool ? 1 : 0);
+    this.localStreams.forEach(function (stream) {
+        stream.getAudioTracks().forEach(function (track) {
+            track.enabled = !!bool;
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype._videoEnabled" id="apidoc.module.webrtc.super_.prototype._videoEnabled">module webrtc.super_.prototype._videoEnabled</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype._videoEnabled._videoEnabled" id="apidoc.element.webrtc.super_.prototype._videoEnabled._videoEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>_videoEnabled
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_videoEnabled = function (bool) {
+    this.localStreams.forEach(function (stream) {
+        stream.getVideoTracks().forEach(function (track) {
+            track.enabled = !!bool;
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.isAudioEnabled" id="apidoc.module.webrtc.super_.prototype.isAudioEnabled">module webrtc.super_.prototype.isAudioEnabled</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.isAudioEnabled.isAudioEnabled" id="apidoc.element.webrtc.super_.prototype.isAudioEnabled.isAudioEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>isAudioEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAudioEnabled = function () {
+    var enabled = true;
+    this.localStreams.forEach(function (stream) {
+        stream.getAudioTracks().forEach(function (track) {
+            enabled = enabled &#x26;&#x26; track.enabled;
+        });
+    });
+    return enabled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.isVideoEnabled" id="apidoc.module.webrtc.super_.prototype.isVideoEnabled">module webrtc.super_.prototype.isVideoEnabled</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.isVideoEnabled.isVideoEnabled" id="apidoc.element.webrtc.super_.prototype.isVideoEnabled.isVideoEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>isVideoEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isVideoEnabled = function () {
+    var enabled = true;
+    this.localStreams.forEach(function (stream) {
+        stream.getVideoTracks().forEach(function (track) {
+            enabled = enabled &#x26;&#x26; track.enabled;
+        });
+    });
+    return enabled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.mute" id="apidoc.module.webrtc.super_.prototype.mute">module webrtc.super_.prototype.mute</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.mute.mute" id="apidoc.element.webrtc.super_.prototype.mute.mute">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>mute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mute = function () {
+    this._audioEnabled(false);
+    this.hardMuted = true;
+    this.emit(&#x27;audioOff&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.pause" id="apidoc.module.webrtc.super_.prototype.pause">module webrtc.super_.prototype.pause</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.pause.pause" id="apidoc.element.webrtc.super_.prototype.pause.pause">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>pause
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pause = function () {
+    this.mute();
+    this.pauseVideo();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.pauseVideo" id="apidoc.module.webrtc.super_.prototype.pauseVideo">module webrtc.super_.prototype.pauseVideo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.pauseVideo.pauseVideo" id="apidoc.element.webrtc.super_.prototype.pauseVideo.pauseVideo">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>pauseVideo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pauseVideo = function () {
+    this._videoEnabled(false);
+    this.emit(&#x27;videoOff&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.resume" id="apidoc.module.webrtc.super_.prototype.resume">module webrtc.super_.prototype.resume</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.resume.resume" id="apidoc.element.webrtc.super_.prototype.resume.resume">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>resume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resume = function () {
+    this.unmute();
+    this.resumeVideo();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.resumeVideo" id="apidoc.module.webrtc.super_.prototype.resumeVideo">module webrtc.super_.prototype.resumeVideo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.resumeVideo.resumeVideo" id="apidoc.element.webrtc.super_.prototype.resumeVideo.resumeVideo">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>resumeVideo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resumeVideo = function () {
+    this._videoEnabled(true);
+    this.emit(&#x27;videoOn&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.setMicIfEnabled" id="apidoc.module.webrtc.super_.prototype.setMicIfEnabled">module webrtc.super_.prototype.setMicIfEnabled</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.setMicIfEnabled.setMicIfEnabled" id="apidoc.element.webrtc.super_.prototype.setMicIfEnabled.setMicIfEnabled">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>setMicIfEnabled
+        <span class="apidocSignatureSpan">(volume)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setMicIfEnabled = function (volume) {
+    if (!this.config.autoAdjustMic) {
+        return;
+    }
+    this.gainController.setGain(volume);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.setupAudioMonitor" id="apidoc.module.webrtc.super_.prototype.setupAudioMonitor">module webrtc.super_.prototype.setupAudioMonitor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.setupAudioMonitor.setupAudioMonitor" id="apidoc.element.webrtc.super_.prototype.setupAudioMonitor.setupAudioMonitor">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>setupAudioMonitor
+        <span class="apidocSignatureSpan">(stream, harkOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupAudioMonitor = function (stream, harkOptions) {
+    this._log(&#x27;Setup audio&#x27;);
+    var audio = this.audioMonitor = hark(stream, harkOptions);
+    var self = this;
+    var timeout;
+
+    audio.on(&#x27;speaking&#x27;, function () {
+        self.emit(&#x27;speaking&#x27;);
+        if (self.hardMuted) {
+            return;
+        }
+        self.setMicIfEnabled(1);
+    });
+
+    audio.on(&#x27;stopped_speaking&#x27;, function () {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
+        timeout = setTimeout(function () {
+            self.emit(&#x27;stoppedSpeaking&#x27;);
+            if (self.hardMuted) {
+                return;
+            }
+            self.setMicIfEnabled(0.5);
+        }, 1000);
+    });
+    audio.on(&#x27;volume_change&#x27;, function (volume, treshold) {
+        self.emit(&#x27;volumeChange&#x27;, volume, treshold);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.start" id="apidoc.module.webrtc.super_.prototype.start">module webrtc.super_.prototype.start</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.start.start" id="apidoc.element.webrtc.super_.prototype.start.start">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>start
+        <span class="apidocSignatureSpan">(mediaConstraints, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (mediaConstraints, cb) {
+    var self = this;
+    var constraints = mediaConstraints || this.config.media;
+
+    getUserMedia(constraints, function (err, stream) {
+
+        if (!err) {
+            if (constraints.audio &#x26;&#x26; self.config.detectSpeakingEvents) {
+                self.setupAudioMonitor(stream, self.config.harkOptions);
+            }
+            self.localStreams.push(stream);
+
+            if (self.config.autoAdjustMic) {
+                self.gainController = new GainController(stream);
+                // start out somewhat muted if we can track audio
+                self.setMicIfEnabled(0.5);
+            }
+
+            // TODO: might need to migrate to the video tracks onended
+            // FIXME: firefox does not seem to trigger this...
+            stream.onended = function () {
+<span class="apidocCodeCommentSpan">                /*
+                var idx = self.localStreams.indexOf(stream);
+                if (idx &#x3e; -1) {
+                    self.localScreens.splice(idx, 1);
+                }
+                self.emit(&#x27;localStreamStopped&#x27;, stream);
+                */
+</span>            };
+
+            self.emit(&#x27;localStream&#x27;, stream);
+        } else {
+            // Fallback for users without a camera
+            if (self.config.audioFallback &#x26;&#x26; err.name === &#x27;DevicesNotFoundError&#x27; &#x26;&#x26; constraints.video !== false) {
+                constraints.video = false;
+                self.start(constraints, cb);
+                return;
+            }
+        }
+        if (cb) {
+            return cb(err, stream);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.startScreenShare" id="apidoc.module.webrtc.super_.prototype.startScreenShare">module webrtc.super_.prototype.startScreenShare</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.startScreenShare.startScreenShare" id="apidoc.element.webrtc.super_.prototype.startScreenShare.startScreenShare">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>startScreenShare
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startScreenShare = function (cb) {
+    var self = this;
+    getScreenMedia(function (err, stream) {
+        if (!err) {
+            self.localScreens.push(stream);
+
+            // TODO: might need to migrate to the video tracks onended
+            // Firefox does not support .onended but it does not support
+            // screensharing either
+            stream.onended = function () {
+                var idx = self.localScreens.indexOf(stream);
+                if (idx &#x3e; -1) {
+                    self.localScreens.splice(idx, 1);
+                }
+                self.emit(&#x27;localScreenStopped&#x27;, stream);
+            };
+            self.emit(&#x27;localScreen&#x27;, stream);
+        }
+
+        // enable the callback
+        if (cb) {
+            return cb(err, stream);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.stop" id="apidoc.module.webrtc.super_.prototype.stop">module webrtc.super_.prototype.stop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stop.stop" id="apidoc.element.webrtc.super_.prototype.stop.stop">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stop
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (stream) {
+    var self = this;
+    // FIXME: duplicates cleanup code until fixed in FF
+    if (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        var idx = self.localStreams.indexOf(stream);
+        if (idx &#x3e; -1) {
+            self.emit(&#x27;localStreamStopped&#x27;, stream);
+            self.localStreams = self.localStreams.splice(idx, 1);
+        } else {
+            idx = self.localScreens.indexOf(stream);
+            if (idx &#x3e; -1) {
+                self.emit(&#x27;localScreenStopped&#x27;, stream);
+                self.localScreens = self.localScreens.splice(idx, 1);
+            }
+        }
+    } else {
+        this.stopStreams();
+        this.stopScreenShare();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.stopScreenShare" id="apidoc.module.webrtc.super_.prototype.stopScreenShare">module webrtc.super_.prototype.stopScreenShare</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stopScreenShare.stopScreenShare" id="apidoc.element.webrtc.super_.prototype.stopScreenShare.stopScreenShare">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopScreenShare
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopScreenShare = function (stream) {
+    var self = this;
+    if (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        this.emit(&#x27;localScreenStopped&#x27;, stream);
+    } else {
+        this.localScreens.forEach(function (stream) {
+            stream.getTracks().forEach(function (track) { track.stop(); });
+            self.emit(&#x27;localScreenStopped&#x27;, stream);
+        });
+        this.localScreens = [];
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.stopStreams" id="apidoc.module.webrtc.super_.prototype.stopStreams">module webrtc.super_.prototype.stopStreams</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.stopStreams.stopStreams" id="apidoc.element.webrtc.super_.prototype.stopStreams.stopStreams">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>stopStreams
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopStreams = function () {
+    var self = this;
+    if (this.audioMonitor) {
+        this.audioMonitor.stop();
+        delete this.audioMonitor;
+    }
+    this.localStreams.forEach(function (stream) {
+        stream.getTracks().forEach(function (track) { track.stop(); });
+        self.emit(&#x27;localStreamStopped&#x27;, stream);
+    });
+    this.localStreams = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.prototype.unmute" id="apidoc.module.webrtc.super_.prototype.unmute">module webrtc.super_.prototype.unmute</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.prototype.unmute.unmute" id="apidoc.element.webrtc.super_.prototype.unmute.unmute">
+        function <span class="apidocSignatureSpan">webrtc.super_.prototype.</span>unmute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unmute = function () {
+    this._audioEnabled(true);
+    this.hardMuted = false;
+    this.emit(&#x27;audioOn&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.super_" id="apidoc.module.webrtc.super_.super_">module webrtc.super_.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.super_" id="apidoc.element.webrtc.super_.super_.super_">
+        function <span class="apidocSignatureSpan">webrtc.super_.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WildEmitter() { }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.mixin" id="apidoc.element.webrtc.super_.super_.mixin">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.</span>mixin
+        <span class="apidocSignatureSpan">(constructor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mixin = function (constructor) {
+    var prototype = constructor.prototype || constructor;
+
+    prototype.isWildEmitter= true;
+
+    // Listen on the given `event` with `fn`. Store a group name if present.
+    prototype.on = function (event, groupName, fn) {
+        this.callbacks = this.callbacks || {};
+        var hasGroup = (arguments.length === 3),
+            group = hasGroup ? arguments[1] : undefined,
+            func = hasGroup ? arguments[2] : arguments[1];
+        func._groupName = group;
+        (this.callbacks[event] = this.callbacks[event] || []).push(func);
+        return this;
+    };
+
+    // Adds an `event` listener that will be invoked a single
+    // time then automatically removed.
+    prototype.once = function (event, groupName, fn) {
+        var self = this,
+            hasGroup = (arguments.length === 3),
+            group = hasGroup ? arguments[1] : undefined,
+            func = hasGroup ? arguments[2] : arguments[1];
+        function on() {
+            self.off(event, on);
+            func.apply(this, arguments);
+        }
+        this.on(event, group, on);
+        return this;
+    };
+
+    // Unbinds an entire group
+    prototype.releaseGroup = function (groupName) {
+        this.callbacks = this.callbacks || {};
+        var item, i, len, handlers;
+        for (item in this.callbacks) {
+            handlers = this.callbacks[item];
+            for (i = 0, len = handlers.length; i &#x3c; len; i++) {
+                if (handlers[i]._groupName === groupName) {
+                    //console.log(&#x27;removing&#x27;);
+                    // remove it and shorten the array we&#x27;re looping through
+                    handlers.splice(i, 1);
+                    i--;
+                    len--;
+                }
+            }
+        }
+        return this;
+    };
+
+    // Remove the given callback for `event` or all
+    // registered callbacks.
+    prototype.off = function (event, fn) {
+        this.callbacks = this.callbacks || {};
+        var callbacks = this.callbacks[event],
+            i;
+
+        if (!callbacks) return this;
+
+        // remove all handlers
+        if (arguments.length === 1) {
+            delete this.callbacks[event];
+            return this;
+        }
+
+        // remove specific handler
+        i = callbacks.indexOf(fn);
+        callbacks.splice(i, 1);
+        if (callbacks.length === 0) {
+            delete this.callbacks[event];
+        }
+        return this;
+    };
+
+    /// Emit `event` with the given args.
+    // also calls any `*` handlers
+    prototype.emit = function (event) {
+        this.callbacks = this.callbacks || {};
+        var args = [].slice.call(arguments, 1),
+            callbacks = this.callbacks[event],
+            specialCallbacks = this.getWildcardCallbacks(event),
+            i,
+            len,
+            item,
+            listeners;
+
+        if (callbacks) {
+            listeners = callbacks.slice();
+            for (i = 0, len = listeners.length; i &#x3c; len; ++i) {
+                if (!listeners[i]) {
+                    break;
+                }
+                listeners[i].apply(this, args);
+            }
+        }
+
+        if (specialCallbacks) {
+            len = specialCallbacks.length;
+            listeners = specialCallbacks.slice();
+            for (i = 0, len = listeners.length; i &#x3c; len; ++i) {
+                if (!listeners[i]) {
+                    break;
+                }
+                listeners[i].apply(this, [event].concat(args));
+            }
+        }
+
+        return this;
+    };
+
+    // Helper for for finding special wildcard event handlers that match the event
+    prototype.getWildcardCallbacks = function (eventName) {
+        this.callbacks = this.callbacks || {};
+        var item,
+            split,
+            result = [];
+
+        for (item in this.callbacks) {
+            split = item.split(&#x27;*&#x27;);
+            if (item === &#x27;*&#x27; || (split.length === 2 &#x26;&#x26; eventName.slice(0, split[0].length) === split[0])) {
+                result = result.concat(this.c ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.super_.prototype" id="apidoc.module.webrtc.super_.super_.prototype">module webrtc.super_.super_.prototype</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.emit" id="apidoc.element.webrtc.super_.super_.prototype.emit">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>emit
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (event) {
+    this.callbacks = this.callbacks || {};
+    var args = [].slice.call(arguments, 1),
+        callbacks = this.callbacks[event],
+        specialCallbacks = this.getWildcardCallbacks(event),
+        i,
+        len,
+        item,
+        listeners;
+
+    if (callbacks) {
+        listeners = callbacks.slice();
+        for (i = 0, len = listeners.length; i &#x3c; len; ++i) {
+            if (!listeners[i]) {
+                break;
+            }
+            listeners[i].apply(this, args);
+        }
+    }
+
+    if (specialCallbacks) {
+        len = specialCallbacks.length;
+        listeners = specialCallbacks.slice();
+        for (i = 0, len = listeners.length; i &#x3c; len; ++i) {
+            if (!listeners[i]) {
+                break;
+            }
+            listeners[i].apply(this, [event].concat(args));
+        }
+    }
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.pc.on(&#x27;iceConnectionStateChange&#x27;, this.emit.bind(this, &#x27;iceConnectionStateChange&#x27;));
+this.pc.on(&#x27;iceConnectionStateChange&#x27;, function () {
+    switch (self.pc.iceConnectionState) {
+    case &#x27;failed&#x27;:
+        // currently, in chrome only the initiator goes to failed
+        // so we need to signal this to the peer
+        if (self.pc.pc.peerconnection.localDescription.type === &#x27;offer&#x27;) {
+            self.parent.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;iceFailed&#x27;, self);
+            self.send(&#x27;connectivityError&#x27;);
+        }
+        break;
+    }
+});
+this.pc.on(&#x27;signalingStateChange&#x27;, this.emit.bind(this, &#x27;signalingStateChange&#x27;));
+this.logger = this.parent.logger;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks" id="apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>getWildcardCallbacks
+        <span class="apidocSignatureSpan">(eventName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getWildcardCallbacks = function (eventName) {
+    this.callbacks = this.callbacks || {};
+    var item,
+        split,
+        result = [];
+
+    for (item in this.callbacks) {
+        split = item.split(&#x27;*&#x27;);
+        if (item === &#x27;*&#x27; || (split.length === 2 &#x26;&#x26; eventName.slice(0, split[0].length) === split[0])) {
+            result = result.concat(this.callbacks[item]);
+        }
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.off" id="apidoc.element.webrtc.super_.super_.prototype.off">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>off
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">off = function (event, fn) {
+    this.callbacks = this.callbacks || {};
+    var callbacks = this.callbacks[event],
+        i;
+
+    if (!callbacks) return this;
+
+    // remove all handlers
+    if (arguments.length === 1) {
+        delete this.callbacks[event];
+        return this;
+    }
+
+    // remove specific handler
+    i = callbacks.indexOf(fn);
+    callbacks.splice(i, 1);
+    if (callbacks.length === 0) {
+        delete this.callbacks[event];
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.on" id="apidoc.element.webrtc.super_.super_.prototype.on">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>on
+        <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (event, groupName, fn) {
+    this.callbacks = this.callbacks || {};
+    var hasGroup = (arguments.length === 3),
+        group = hasGroup ? arguments[1] : undefined,
+        func = hasGroup ? arguments[2] : arguments[1];
+    func._groupName = group;
+    (this.callbacks[event] = this.callbacks[event] || []).push(func);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.stream = options.stream;
+this.enableDataChannels = options.enableDataChannels === undefined ? this.parent.config.enableDataChannels : options.enableDataChannels
+;
+this.receiveMedia = options.receiveMedia || this.parent.config.receiveMedia;
+this.channels = {};
+this.sid = options.sid || Date.now().toString();
+// Create an RTCPeerConnection via the polyfill
+this.pc = new PeerConnection(this.parent.config.peerConnectionConfig, this.parent.config.peerConnectionConstraints);
+this.pc.<span class="apidocCodeKeywordSpan">on</span>(&#x27;ice&#x27;, this.onIceCandidate.bind(this));
+this.pc.on(&#x27;offer&#x27;, function (offer) {
+    self.send(&#x27;offer&#x27;, offer);
+});
+this.pc.on(&#x27;answer&#x27;, function (offer) {
+    self.send(&#x27;answer&#x27;, offer);
+});
+this.pc.on(&#x27;addStream&#x27;, this.handleRemoteStreamAdded.bind(this));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.once" id="apidoc.element.webrtc.super_.super_.prototype.once">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>once
+        <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function (event, groupName, fn) {
+    var self = this,
+        hasGroup = (arguments.length === 3),
+        group = hasGroup ? arguments[1] : undefined,
+        func = hasGroup ? arguments[2] : arguments[1];
+    function on() {
+        self.off(event, on);
+        func.apply(this, arguments);
+    }
+    this.on(event, group, on);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.releaseGroup" id="apidoc.element.webrtc.super_.super_.prototype.releaseGroup">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>releaseGroup
+        <span class="apidocSignatureSpan">(groupName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">releaseGroup = function (groupName) {
+    this.callbacks = this.callbacks || {};
+    var item, i, len, handlers;
+    for (item in this.callbacks) {
+        handlers = this.callbacks[item];
+        for (i = 0, len = handlers.length; i &#x3c; len; i++) {
+            if (handlers[i]._groupName === groupName) {
+                //console.log(&#x27;removing&#x27;);
+                // remove it and shorten the array we&#x27;re looping through
+                handlers.splice(i, 1);
+                i--;
+                len--;
+            }
+        }
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.super_.prototype.emit" id="apidoc.module.webrtc.super_.super_.prototype.emit">module webrtc.super_.super_.prototype.emit</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.emit.emit" id="apidoc.element.webrtc.super_.super_.prototype.emit.emit">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>emit
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (event) {
+    this.callbacks = this.callbacks || {};
+    var args = [].slice.call(arguments, 1),
+        callbacks = this.callbacks[event],
+        specialCallbacks = this.getWildcardCallbacks(event),
+        i,
+        len,
+        item,
+        listeners;
+
+    if (callbacks) {
+        listeners = callbacks.slice();
+        for (i = 0, len = listeners.length; i &#x3c; len; ++i) {
+            if (!listeners[i]) {
+                break;
+            }
+            listeners[i].apply(this, args);
+        }
+    }
+
+    if (specialCallbacks) {
+        len = specialCallbacks.length;
+        listeners = specialCallbacks.slice();
+        for (i = 0, len = listeners.length; i &#x3c; len; ++i) {
+            if (!listeners[i]) {
+                break;
+            }
+            listeners[i].apply(this, [event].concat(args));
+        }
+    }
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.pc.on(&#x27;iceConnectionStateChange&#x27;, this.emit.bind(this, &#x27;iceConnectionStateChange&#x27;));
+this.pc.on(&#x27;iceConnectionStateChange&#x27;, function () {
+    switch (self.pc.iceConnectionState) {
+    case &#x27;failed&#x27;:
+        // currently, in chrome only the initiator goes to failed
+        // so we need to signal this to the peer
+        if (self.pc.pc.peerconnection.localDescription.type === &#x27;offer&#x27;) {
+            self.parent.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;iceFailed&#x27;, self);
+            self.send(&#x27;connectivityError&#x27;);
+        }
+        break;
+    }
+});
+this.pc.on(&#x27;signalingStateChange&#x27;, this.emit.bind(this, &#x27;signalingStateChange&#x27;));
+this.logger = this.parent.logger;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.super_.prototype.getWildcardCallbacks" id="apidoc.module.webrtc.super_.super_.prototype.getWildcardCallbacks">module webrtc.super_.super_.prototype.getWildcardCallbacks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks.getWildcardCallbacks" id="apidoc.element.webrtc.super_.super_.prototype.getWildcardCallbacks.getWildcardCallbacks">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>getWildcardCallbacks
+        <span class="apidocSignatureSpan">(eventName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getWildcardCallbacks = function (eventName) {
+    this.callbacks = this.callbacks || {};
+    var item,
+        split,
+        result = [];
+
+    for (item in this.callbacks) {
+        split = item.split(&#x27;*&#x27;);
+        if (item === &#x27;*&#x27; || (split.length === 2 &#x26;&#x26; eventName.slice(0, split[0].length) === split[0])) {
+            result = result.concat(this.callbacks[item]);
+        }
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.super_.prototype.off" id="apidoc.module.webrtc.super_.super_.prototype.off">module webrtc.super_.super_.prototype.off</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.off.off" id="apidoc.element.webrtc.super_.super_.prototype.off.off">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>off
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">off = function (event, fn) {
+    this.callbacks = this.callbacks || {};
+    var callbacks = this.callbacks[event],
+        i;
+
+    if (!callbacks) return this;
+
+    // remove all handlers
+    if (arguments.length === 1) {
+        delete this.callbacks[event];
+        return this;
+    }
+
+    // remove specific handler
+    i = callbacks.indexOf(fn);
+    callbacks.splice(i, 1);
+    if (callbacks.length === 0) {
+        delete this.callbacks[event];
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.super_.prototype.on" id="apidoc.module.webrtc.super_.super_.prototype.on">module webrtc.super_.super_.prototype.on</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.on.on" id="apidoc.element.webrtc.super_.super_.prototype.on.on">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>on
+        <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (event, groupName, fn) {
+    this.callbacks = this.callbacks || {};
+    var hasGroup = (arguments.length === 3),
+        group = hasGroup ? arguments[1] : undefined,
+        func = hasGroup ? arguments[2] : arguments[1];
+    func._groupName = group;
+    (this.callbacks[event] = this.callbacks[event] || []).push(func);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.stream = options.stream;
+this.enableDataChannels = options.enableDataChannels === undefined ? this.parent.config.enableDataChannels : options.enableDataChannels
+;
+this.receiveMedia = options.receiveMedia || this.parent.config.receiveMedia;
+this.channels = {};
+this.sid = options.sid || Date.now().toString();
+// Create an RTCPeerConnection via the polyfill
+this.pc = new PeerConnection(this.parent.config.peerConnectionConfig, this.parent.config.peerConnectionConstraints);
+this.pc.<span class="apidocCodeKeywordSpan">on</span>(&#x27;ice&#x27;, this.onIceCandidate.bind(this));
+this.pc.on(&#x27;offer&#x27;, function (offer) {
+    self.send(&#x27;offer&#x27;, offer);
+});
+this.pc.on(&#x27;answer&#x27;, function (offer) {
+    self.send(&#x27;answer&#x27;, offer);
+});
+this.pc.on(&#x27;addStream&#x27;, this.handleRemoteStreamAdded.bind(this));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.super_.prototype.once" id="apidoc.module.webrtc.super_.super_.prototype.once">module webrtc.super_.super_.prototype.once</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.once.once" id="apidoc.element.webrtc.super_.super_.prototype.once.once">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>once
+        <span class="apidocSignatureSpan">(event, groupName, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function (event, groupName, fn) {
+    var self = this,
+        hasGroup = (arguments.length === 3),
+        group = hasGroup ? arguments[1] : undefined,
+        func = hasGroup ? arguments[2] : arguments[1];
+    function on() {
+        self.off(event, on);
+        func.apply(this, arguments);
+    }
+    this.on(event, group, on);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.super_.super_.prototype.releaseGroup" id="apidoc.module.webrtc.super_.super_.prototype.releaseGroup">module webrtc.super_.super_.prototype.releaseGroup</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.super_.super_.prototype.releaseGroup.releaseGroup" id="apidoc.element.webrtc.super_.super_.prototype.releaseGroup.releaseGroup">
+        function <span class="apidocSignatureSpan">webrtc.super_.super_.prototype.</span>releaseGroup
+        <span class="apidocSignatureSpan">(groupName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">releaseGroup = function (groupName) {
+    this.callbacks = this.callbacks || {};
+    var item, i, len, handlers;
+    for (item in this.callbacks) {
+        handlers = this.callbacks[item];
+        for (i = 0, len = handlers.length; i &#x3c; len; i++) {
+            if (handlers[i]._groupName === groupName) {
+                //console.log(&#x27;removing&#x27;);
+                // remove it and shorten the array we&#x27;re looping through
+                handlers.splice(i, 1);
+                i--;
+                len--;
+            }
+        }
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webrtc.toString" id="apidoc.module.webrtc.toString">module webrtc.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webrtc.toString.toString" id="apidoc.element.webrtc.toString.toString">
+        function <span class="apidocSignatureSpan">webrtc.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.oneway = options.oneway || false;
+this.sharemyscreen = options.sharemyscreen || false;
+this.browserPrefix = options.prefix;
+this.stream = options.stream;
+this.enableDataChannels = options.enableDataChannels === undefined ? this.parent.config.enableDataChannels : options.enableDataChannels
+;
+this.receiveMedia = options.receiveMedia || this.parent.config.receiveMedia;
+this.channels = {};
+this.sid = options.sid || Date.now().<span class="apidocCodeKeywordSpan">toString</span>();
+// Create an RTCPeerConnection via the polyfill
+this.pc = new PeerConnection(this.parent.config.peerConnectionConfig, this.parent.config.peerConnectionConstraints);
+this.pc.on(&#x27;ice&#x27;, this.onIceCandidate.bind(this));
+this.pc.on(&#x27;offer&#x27;, function (offer) {
+    self.send(&#x27;offer&#x27;, offer);
+});
+this.pc.on(&#x27;answer&#x27;, function (offer) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
