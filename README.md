@@ -1,4 +1,7 @@
-# api documentation for  [webrtc (v1.14.1)](https://github.com/henrikjoreteg/webrtc.js)  [![npm package](https://img.shields.io/npm/v/npmdoc-webrtc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-webrtc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-webrtc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-webrtc)
+# npmdoc-webrtc
+
+#### basic api documentation for  [webrtc (v1.14.1)](https://github.com/henrikjoreteg/webrtc.js)  [![npm package](https://img.shields.io/npm/v/npmdoc-webrtc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-webrtc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-webrtc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-webrtc)
+
 #### WebRTC abstraction for making it simple to manage multiple peer connections of various types.
 
 [![NPM](https://nodei.co/npm/webrtc.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/webrtc)
@@ -68,7 +71,8 @@
         "url": "git+ssh://git@github.com/henrikjoreteg/webrtc.js.git"
     },
     "scripts": {},
-    "version": "1.14.1"
+    "version": "1.14.1",
+    "bin": {}
 }
 ```
 
